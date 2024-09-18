@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1C7ADC61-8D02-4E91-A9CD-393AA3719756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "combofind.WebApi", "combofind.WebApi\combofind.WebApi.csproj", "{3F196612-8E6D-4C69-81A4-3100A037CB49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "combofind.WebApi", "src/combofind.WebApi\combofind.WebApi.csproj", "{3F196612-8E6D-4C69-81A4-3100A037CB49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
