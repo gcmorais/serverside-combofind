@@ -5,6 +5,7 @@
         public Guid Id { get; private set; }
         public DateTimeOffset DateCreated { get; private set; }
         public DateTimeOffset? DateUpdated { get; private set; }
+        public DateTimeOffset? DateDeleted { get; set; }
 
         public BaseEntity()
         {
@@ -15,6 +16,9 @@
         {
             DateUpdated = DateTimeOffset.UtcNow;
         }
-
+        public void MarkAsDeleted()
+        {
+            DateDeleted = DateTimeOffset.UtcNow;
+        }
     }
 }
