@@ -12,9 +12,9 @@ namespace combofind.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task Commit(CancellationToken cancellationToken)
+        public async Task Commit()
         {
-            await _context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync();
         }
     }
 }

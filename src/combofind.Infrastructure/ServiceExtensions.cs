@@ -14,7 +14,7 @@ namespace combofind.Infrastructure
             var connectionString = configuration.GetConnectionString("SqlServer");
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IColletionRepository, CollectionRepository>();
+            services.AddScoped<ICollectionRepository, CollectionRepository>();
             services.AddScoped<IGunsRepository, GunsRepository>();
         }
     }

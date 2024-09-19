@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace combofind.Infrastructure.Repositories
 {
-    public class CollectionRepository : BaseRepository<Collection>, IColletionRepository
+    public class CollectionRepository : BaseRepository<Collection>, ICollectionRepository
     {
         public CollectionRepository(AppDbContext context) : base(context) { }
 

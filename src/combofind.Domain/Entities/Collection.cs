@@ -16,7 +16,6 @@
             if (string.IsNullOrWhiteSpace(budget))
                 throw new ArgumentException("Budget is required.", nameof(budget));
 
-
             Color = color;
             Budget = budget;
         }

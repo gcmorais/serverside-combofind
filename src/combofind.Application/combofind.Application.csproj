@@ -10,4 +10,26 @@
     <ProjectReference Include="..\combofind.Domain\combofind.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\CollectionUseCases\Delete\" />
+    <Folder Include="UseCases\CollectionUseCases\GetAll\" />
+    <Folder Include="UseCases\CollectionUseCases\Update\" />
+    <Folder Include="UseCases\GunsUseCases\Common\" />
+    <Folder Include="UseCases\GunsUseCases\Create\" />
+    <Folder Include="UseCases\GunsUseCases\Delete\" />
+    <Folder Include="UseCases\GunsUseCases\GetAll\" />
+    <Folder Include="UseCases\GunsUseCases\Update\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+  </ItemGroup>
+
 </Project>
