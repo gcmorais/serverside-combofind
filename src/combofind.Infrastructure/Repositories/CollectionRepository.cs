@@ -14,6 +14,7 @@ namespace combofind.Infrastructure.Repositories
             return await _context.Collection.Include(c => c.Guns).ToListAsync();
         }
 
+
         public async Task<Collection> GetByBudget(string budget)
         {
             return await _context.Collection.FirstOrDefaultAsync(x => x.Budget == budget);

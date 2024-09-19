@@ -10,10 +10,12 @@
         public string MainColor { get; private set; }
         public decimal AveragePrice { get; private set; }
         public string Image { get; private set; }
+        public Guid CollectionID { get; private set; }
+        public Collection Collection { get; private set; }
 
         private Guns() { }
         
-        public Guns(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image)
+        public Guns(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image, Collection collection)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Name is required.", nameof(name));
@@ -44,8 +46,16 @@
             MainColor = mainColor;
             AveragePrice = averagePrice;
             Image = image;
+            AssignCollection(collection);
         }
+        public void AssignCollection(Collection collection)
+        {
+            if (collection == null)
+                throw new ArgumentNullException(nameof(collection));
 
+            Collection = collection;
+            CollectionID = collection.Id;
+        }
         public void UpdatePrice(decimal newPrice)
         {
             if (newPrice <= 0)

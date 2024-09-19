@@ -11,11 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\CollectionUseCases\Delete\" />
-    <Folder Include="UseCases\CollectionUseCases\GetAll\" />
-    <Folder Include="UseCases\CollectionUseCases\Update\" />
-    <Folder Include="UseCases\GunsUseCases\Common\" />
-    <Folder Include="UseCases\GunsUseCases\Create\" />
     <Folder Include="UseCases\GunsUseCases\Delete\" />
     <Folder Include="UseCases\GunsUseCases\GetAll\" />
     <Folder Include="UseCases\GunsUseCases\Update\" />

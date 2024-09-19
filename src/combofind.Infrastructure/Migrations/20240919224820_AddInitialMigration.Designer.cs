@@ -12,7 +12,7 @@ using combofind.Infrastructure.Context;
 namespace combofind.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240919012702_AddInitialMigration")]
+    [Migration("20240919224820_AddInitialMigration")]
     partial class AddInitialMigration
     {
         /// <inheritdoc />

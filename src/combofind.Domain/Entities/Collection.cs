@@ -4,7 +4,7 @@
     {
         public string Color { get; private set; }
         public string Budget { get; private set; }
-        public ICollection<Guns> Guns { get; private set; } = new HashSet<Guns>();
+        public List<Guns> Guns { get; private set; }
 
         private Collection() { }
         
@@ -18,6 +18,27 @@
 
             Color = color;
             Budget = budget;
+        }
+
+        public void AddGun(Guns gun)
+        {
+            Guns.Add(gun);
+        }
+        public void UpdateColor(string newColor)
+        {
+            if (string.IsNullOrWhiteSpace(newColor))
+                throw new ArgumentException("Color cannot be empty.", nameof(newColor));
+
+            Color = newColor;
+            UpdateDate();
+        }
+        public void UpdateBudget(string newBudget)
+        {
+            if (string.IsNullOrWhiteSpace(newBudget))
+                throw new ArgumentException("Budget cannot be empty.", nameof(newBudget));
+
+            Budget = newBudget;
+            UpdateDate();
         }
     }
 }

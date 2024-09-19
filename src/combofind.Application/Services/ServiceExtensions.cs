@@ -15,7 +15,6 @@ namespace combofind.Application.Services
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddExceptionHandler<GlobalExceptionHandler>();
-            services.AddProblemDetails();
         }
     }
 }
