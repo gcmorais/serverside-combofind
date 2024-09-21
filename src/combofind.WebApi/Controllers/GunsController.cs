@@ -1,6 +1,4 @@
 ﻿using combofind.Application.Models;
-using combofind.Application.UseCases.CollectionUseCases.Common;
-using combofind.Application.UseCases.CollectionUseCases.Delete;
 using combofind.Application.UseCases.GunsUseCases.Common;
 using combofind.Application.UseCases.GunsUseCases.Create;
 using combofind.Application.UseCases.GunsUseCases.Delete;

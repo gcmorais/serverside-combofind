@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using combofind.Application.UseCases.CollectionUseCases.Common;
 using combofind.Application.UseCases.GunsUseCases.Common;
 using combofind.Domain.Interface;
 using MediatR;
