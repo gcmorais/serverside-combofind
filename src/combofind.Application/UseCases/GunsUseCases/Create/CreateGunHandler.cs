@@ -2,6 +2,7 @@
 using combofind.Application.UseCases.GunsUseCases.Common;
 using combofind.Domain.Entities;
 using combofind.Domain.Interface;
+using combofind.Resources;
 using MediatR;
 
 namespace combofind.Application.UseCases.GunsUseCases.Create
@@ -30,7 +31,7 @@ namespace combofind.Application.UseCases.GunsUseCases.Create
 
             if (collection == null)
             {
-                throw new InvalidOperationException("Collection not found.");
+                throw new InvalidOperationException(ResourceErrorMessages.NotFound);
             }
 
             var collectionData = _mapper.Map<Guns>(request);

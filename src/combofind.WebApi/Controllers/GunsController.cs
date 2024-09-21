@@ -3,6 +3,7 @@ using combofind.Application.UseCases.GunsUseCases.Common;
 using combofind.Application.UseCases.GunsUseCases.Create;
 using combofind.Application.UseCases.GunsUseCases.Delete;
 using combofind.Application.UseCases.GunsUseCases.Update;
+using combofind.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,14 +34,14 @@ namespace combofind.WebApi.Controllers
         public async Task<ActionResult<ResponseModel<GunResponse>>> Create(CreateGunRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
-            return HandleResponse(response, "Gun not found.", "Item foi registrado com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.CreateMessageSuccess);
         }
 
         [HttpPut]
         public async Task<ActionResult<ResponseModel<GunResponse>>> Update(UpdateGunsRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
-            return HandleResponse(response, "Collection not found.", "Item foi atualizado com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.UpdateMessageSucess);
         }
 
         [HttpDelete("{id}")]
@@ -50,7 +51,7 @@ namespace combofind.WebApi.Controllers
 
             var deleteRequest = new DeleteGunsRequest(id.Value);
             var response = await _mediator.Send(deleteRequest, cancellationToken);
-            return HandleResponse(response, "Guns not found.", "Item deletado com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.DeleteMessageSuccess);
         }
     }
 }

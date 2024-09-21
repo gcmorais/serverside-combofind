@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\combofind.Resources\combofind.Resources.csproj" />
     <ProjectReference Include="..\combofind.Application\combofind.Application.csproj" />
   </ItemGroup>
 

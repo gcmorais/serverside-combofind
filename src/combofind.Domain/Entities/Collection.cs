@@ -1,4 +1,6 @@
-﻿namespace combofind.Domain.Entities
+﻿using combofind.Resources;
+
+namespace combofind.Domain.Entities
 {
     public class Collection : BaseEntity
     {
@@ -11,10 +13,10 @@
         public Collection(string color, string budget)
         {
             if (string.IsNullOrWhiteSpace(color))
-                throw new ArgumentException("Color is required.", nameof(color));
+                throw new ArgumentException(ResourceErrorMessages.ColorRequired, nameof(color));
 
             if (string.IsNullOrWhiteSpace(budget))
-                throw new ArgumentException("Budget is required.", nameof(budget));
+                throw new ArgumentException(ResourceErrorMessages.BudgetRequired, nameof(budget));
 
             Color = color;
             Budget = budget;
@@ -27,7 +29,7 @@
         public void UpdateColor(string newColor)
         {
             if (string.IsNullOrWhiteSpace(newColor))
-                throw new ArgumentException("Color cannot be empty.", nameof(newColor));
+                throw new ArgumentException(ResourceErrorMessages.ColorRequired, nameof(newColor));
 
             Color = newColor;
             UpdateDate();
@@ -35,7 +37,7 @@
         public void UpdateBudget(string newBudget)
         {
             if (string.IsNullOrWhiteSpace(newBudget))
-                throw new ArgumentException("Budget cannot be empty.", nameof(newBudget));
+                throw new ArgumentException(ResourceErrorMessages.BudgetRequired, nameof(newBudget));
 
             Budget = newBudget;
             UpdateDate();

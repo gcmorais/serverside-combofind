@@ -1,4 +1,6 @@
-﻿namespace combofind.Domain.Entities
+﻿using combofind.Resources;
+
+namespace combofind.Domain.Entities
 {
     public class Guns : BaseEntity
     {
@@ -56,28 +58,28 @@
         public void Validations(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image)
         {
             if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("Name is required.", nameof(name));
+                throw new ArgumentException(ResourceErrorMessages.NameRequired, nameof(name));
 
             if (string.IsNullOrWhiteSpace(type))
-                throw new ArgumentException("Type is required.", nameof(type));
+                throw new ArgumentException(ResourceErrorMessages.TypeRequired, nameof(type));
 
             if (string.IsNullOrWhiteSpace(quality))
-                throw new ArgumentException("Quality is required.", nameof(quality));
+                throw new ArgumentException(ResourceErrorMessages.QualityRequired, nameof(quality));
 
             if (string.IsNullOrWhiteSpace(classType))
-                throw new ArgumentException("Class is required.", nameof(classType));
+                throw new ArgumentException(ResourceErrorMessages.ClassRequired, nameof(classType));
 
             if (string.IsNullOrWhiteSpace(condition))
-                throw new ArgumentException("Condition is required.", nameof(condition));
+                throw new ArgumentException(ResourceErrorMessages.ConditionRequired, nameof(condition));
 
             if (string.IsNullOrWhiteSpace(mainColor))
-                throw new ArgumentException("Color is required.", nameof(mainColor));
+                throw new ArgumentException(ResourceErrorMessages.ColorRequired, nameof(mainColor));
 
             if(averagePrice < 0)
-                throw new ArgumentException("Negative price value.", nameof(averagePrice));
+                throw new ArgumentException(ResourceErrorMessages.NegativePrice, nameof(averagePrice));
 
             if (string.IsNullOrWhiteSpace(image))
-                throw new ArgumentException("Image is required.", nameof(image));
+                throw new ArgumentException(ResourceErrorMessages.ImageRequired, nameof(image));
         }
     }
 }

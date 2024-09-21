@@ -4,6 +4,7 @@ using combofind.Application.UseCases.CollectionUseCases.Create;
 using combofind.Application.UseCases.CollectionUseCases.Delete;
 using combofind.Application.UseCases.CollectionUseCases.GetAll;
 using combofind.Application.UseCases.CollectionUseCases.Update;
+using combofind.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,21 +35,21 @@ namespace combofind.WebApi.Controllers
         public async Task<ActionResult<ResponseModel<List<CollectionResponse>>>> GetAll(CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(new GetAllCollectionRequest(), cancellationToken);
-            return HandleResponse(response, "Collections not found.", "Lista de itens foi buscada com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.GetAllMessageSuccess);
         }
 
         [HttpPost]
         public async Task<ActionResult<ResponseModel<CollectionResponse>>> Create(CreateCollectionRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
-            return HandleResponse(response, "Collection not found.", "Item foi criado com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.CreateMessageSuccess);
         }
 
         [HttpPut]
         public async Task<ActionResult<ResponseModel<CollectionResponse>>> Update(UpdateCollectionRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
-            return HandleResponse(response, "Collection not found.", "Item foi atualizado com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.UpdateMessageSucess);
         }
 
         [HttpDelete("{id}")]
@@ -58,7 +59,7 @@ namespace combofind.WebApi.Controllers
 
             var deleteCollectionRequest = new DeleteCollectionRequest(id.Value);
             var response = await _mediator.Send(deleteCollectionRequest, cancellationToken);
-            return HandleResponse(response, "Collection not found.", "Item deletado com sucesso!");
+            return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.DeleteMessageSuccess);
         }
     }
 }

@@ -2,6 +2,7 @@
 using combofind.Application.UseCases.CollectionUseCases.Common;
 using combofind.Domain.Entities;
 using combofind.Domain.Interface;
+using combofind.Resources;
 using MediatR;
 
 namespace combofind.Application.UseCases.CollectionUseCases.Create
@@ -27,7 +28,7 @@ namespace combofind.Application.UseCases.CollectionUseCases.Create
 
             if (existingColor != null)
             {
-                throw new InvalidOperationException("Color with the same name already exists.");
+                throw new InvalidOperationException(ResourceErrorMessages.ColorAlreadyExists);
             }
 
             var collection = new Collection(
