@@ -17,6 +17,44 @@
         
         public Guns(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image, Collection collection)
         {
+            Validations(name, type, quality, classType, condition, mainColor, averagePrice, image);
+
+            Name = name;
+            Type = type;
+            Quality = quality;
+            Class = classType;
+            Condition = condition;
+            MainColor = mainColor;
+            AveragePrice = averagePrice;
+            Image = image;
+
+            AssignCollection(collection);
+        }
+        public void AssignCollection(Collection collection)
+        {
+            if (collection == null)
+                throw new ArgumentNullException(nameof(collection));
+
+            Collection = collection;
+            CollectionID = collection.Id;
+        }
+        public void UpdateData(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image)
+        {
+            Validations(name, type, quality, classType, condition, mainColor, averagePrice, image);
+
+            Name = name;
+            Type = type;
+            Quality = quality;
+            Class = classType;
+            Condition = condition;
+            MainColor = mainColor;
+            AveragePrice = averagePrice;
+            Image = image;
+
+            UpdateDate();
+        }
+        public void Validations(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image)
+        {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Name is required.", nameof(name));
 
@@ -35,35 +73,11 @@
             if (string.IsNullOrWhiteSpace(mainColor))
                 throw new ArgumentException("Color is required.", nameof(mainColor));
 
+            if(averagePrice < 0)
+                throw new ArgumentException("Negative price value.", nameof(averagePrice));
+
             if (string.IsNullOrWhiteSpace(image))
                 throw new ArgumentException("Image is required.", nameof(image));
-
-            Name = name;
-            Type = type;
-            Quality = quality;
-            Class = classType;
-            Condition = condition;
-            MainColor = mainColor;
-            AveragePrice = averagePrice;
-            Image = image;
-            AssignCollection(collection);
         }
-        public void AssignCollection(Collection collection)
-        {
-            if (collection == null)
-                throw new ArgumentNullException(nameof(collection));
-
-            Collection = collection;
-            CollectionID = collection.Id;
-        }
-        public void UpdatePrice(decimal newPrice)
-        {
-            if (newPrice <= 0)
-                throw new ArgumentException("The price must be greater than zero.", nameof(newPrice));
-
-            AveragePrice = newPrice;
-            UpdateDate();
-        }
-
     }
 }

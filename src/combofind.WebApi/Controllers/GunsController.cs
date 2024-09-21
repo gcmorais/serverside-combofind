@@ -1,6 +1,10 @@
 ﻿using combofind.Application.Models;
+using combofind.Application.UseCases.CollectionUseCases.Common;
+using combofind.Application.UseCases.CollectionUseCases.Delete;
 using combofind.Application.UseCases.GunsUseCases.Common;
 using combofind.Application.UseCases.GunsUseCases.Create;
+using combofind.Application.UseCases.GunsUseCases.Delete;
+using combofind.Application.UseCases.GunsUseCases.Update;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +36,23 @@ namespace combofind.WebApi.Controllers
         {
             var response = await _mediator.Send(request, cancellationToken);
             return HandleResponse(response, "Gun not found.", "Item foi registrado com sucesso!");
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<ResponseModel<GunResponse>>> Update(UpdateGunsRequest request, CancellationToken cancellationToken)
+        {
+            var response = await _mediator.Send(request, cancellationToken);
+            return HandleResponse(response, "Collection not found.", "Item foi atualizado com sucesso!");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ResponseModel<GunResponse>>> Delete(Guid? id, CancellationToken cancellationToken)
+        {
+            if (id is null) return BadRequest();
+
+            var deleteRequest = new DeleteGunsRequest(id.Value);
+            var response = await _mediator.Send(deleteRequest, cancellationToken);
+            return HandleResponse(response, "Guns not found.", "Item deletado com sucesso!");
         }
     }
 }
