@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "combofind.WebApi", "src\com
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{F06C315D-B8CA-4B26-9A99-FD72A9DADDDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "combofind.Resources", "combofind.Resources\combofind.Resources.csproj", "{66CE757E-9834-46B9-88F6-8CF6376916AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "combofind.Resources", "src\combofind.Resources\combofind.Resources.csproj", "{66CE757E-9834-46B9-88F6-8CF6376916AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

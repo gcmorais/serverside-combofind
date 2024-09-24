@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\combofind.Resources\combofind.Resources.csproj" />
+    <ProjectReference Include="..\..\src\combofind.Resources\combofind.Resources.csproj" />
     <ProjectReference Include="..\combofind.Application\combofind.Application.csproj" />
     <ProjectReference Include="..\combofind.Infrastructure\combofind.Infrastructure.csproj" />
   </ItemGroup>
