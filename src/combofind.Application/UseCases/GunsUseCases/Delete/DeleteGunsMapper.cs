@@ -8,8 +8,8 @@ namespace combofind.Application.UseCases.GunsUseCases.Delete
     {
         public DeleteGunsMapper()
         {
-            CreateMap<DeleteGunsRequest, Guns>();
-            CreateMap<Guns, GunResponse>();
+            CreateMap<DeleteGunsRequest, GunEntity>();
+            CreateMap<GunEntity, GunResponse>();
         }
     }
 }

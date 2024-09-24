@@ -8,8 +8,8 @@ namespace combofind.Application.UseCases.GunsUseCases.Update
     {
         public UpdateGunsMapper()
         {
-            CreateMap<UpdateGunsRequest, Guns>();
-            CreateMap<Guns, GunResponse>();
+            CreateMap<UpdateGunsRequest, GunEntity>();
+            CreateMap<GunEntity, GunResponse>();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace combofind.Domain.Entities
     {
         public string Color { get; private set; }
         public string Budget { get; private set; }
-        public List<Guns> Guns { get; private set; }
+        public List<GunEntity> Guns { get; private set; }
 
         private Collection() { }
         
@@ -22,7 +22,7 @@ namespace combofind.Domain.Entities
             Budget = budget;
         }
 
-        public void AddGun(Guns gun)
+        public void AddGun(GunEntity gun)
         {
             Guns.Add(gun);
         }

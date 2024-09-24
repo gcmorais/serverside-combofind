@@ -9,7 +9,7 @@ namespace combofind.Application.UseCases.GunsUseCases.Create
         public CreateGunMapper()
         {
             // Mapeia CreateGunRequest para Guns
-            CreateMap<CreateGunRequest, Guns>()
+            CreateMap<CreateGunRequest, GunEntity>()
                 .ForMember(dest => dest.Collection, opt => opt.Ignore());
         }
     }

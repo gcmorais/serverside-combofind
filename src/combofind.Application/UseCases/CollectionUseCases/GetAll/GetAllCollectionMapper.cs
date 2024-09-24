@@ -11,7 +11,7 @@ namespace combofind.Application.UseCases.CollectionUseCases.GetAll
         {
             CreateMap<Collection, CollectionResponse>()
             .ForMember(dest => dest.Guns, opt => opt.MapFrom(src => src.Guns));
-            CreateMap<Guns, GunResponse>();
+            CreateMap<GunEntity, GunResponse>();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace combofind.Domain.Entities
 {
-    public class Guns : BaseEntity
+    public class GunEntity : BaseEntity
     {
         public string Name { get; private set; }
         public string Type { get; private set; }
@@ -15,9 +15,9 @@ namespace combofind.Domain.Entities
         public Guid CollectionID { get; private set; }
         public Collection Collection { get; private set; }
 
-        private Guns() { }
+        private GunEntity() { }
         
-        public Guns(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image, Collection collection)
+        public GunEntity(string name, string type, string quality, string classType, string condition, string mainColor, decimal averagePrice, string image, Collection collection)
         {
             Validations(name, type, quality, classType, condition, mainColor, averagePrice, image);
 

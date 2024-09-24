@@ -34,7 +34,7 @@ namespace combofind.Application.UseCases.GunsUseCases.Create
                 throw new InvalidOperationException(ResourceErrorMessages.NotFound);
             }
 
-            var collectionData = _mapper.Map<Guns>(request);
+            var collectionData = _mapper.Map<GunEntity>(request);
 
             collectionData.AssignCollection(collection);
 
