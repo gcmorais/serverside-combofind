@@ -5,10 +5,12 @@ using combofind.Application.UseCases.GunsUseCases.Delete;
 using combofind.Application.UseCases.GunsUseCases.Update;
 using combofind.Resources;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace combofind.WebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class GunsController : ControllerBase

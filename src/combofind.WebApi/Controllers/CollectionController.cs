@@ -6,6 +6,7 @@ using combofind.Application.UseCases.CollectionUseCases.GetAll;
 using combofind.Application.UseCases.CollectionUseCases.Update;
 using combofind.Resources;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace combofind.WebApi.Controllers
@@ -37,21 +38,21 @@ namespace combofind.WebApi.Controllers
             var response = await _mediator.Send(new GetAllCollectionRequest(), cancellationToken);
             return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.GetAllMessageSuccess);
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<ResponseModel<CollectionResponse>>> Create(CreateCollectionRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
             return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.CreateMessageSuccess);
         }
-
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult<ResponseModel<CollectionResponse>>> Update(UpdateCollectionRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
             return HandleResponse(response, ResourceErrorMessages.NotFound, ResourceSuccessMessages.UpdateMessageSucess);
         }
-
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<ResponseModel<CollectionResponse>>> Delete(Guid? id, CancellationToken cancellationToken)
         {
