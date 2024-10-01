@@ -16,6 +16,17 @@ namespace combofind.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICollectionRepository, CollectionRepository>();
             services.AddScoped<IGunsRepository, GunsRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
         }
     }
 }

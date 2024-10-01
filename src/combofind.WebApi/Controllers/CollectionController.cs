@@ -31,7 +31,6 @@ namespace combofind.WebApi.Controllers
 
             return Ok(ResponseModel<T>.CreateSuccessResponse(response, successMessage));
         }
-
         [HttpGet]
         public async Task<ActionResult<ResponseModel<List<CollectionResponse>>>> GetAll(CancellationToken cancellationToken)
         {
